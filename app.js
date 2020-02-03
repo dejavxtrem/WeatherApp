@@ -23,12 +23,14 @@ const currentDate = (lat1, lat2) => {
         url: apiCall,
            }).done(function(response){
                 if(response.timeZoneId != null){
-                  var hour=(response.timeZoneName)
-                  console.log(hour)
-                  
+                  let timeZone =(response.timeZoneName)
+                  let timeZoneID = response.timeZoneId
+                  console.log(timeZoneID, timeZone)
+                  $('#Timezonename').text(timeZone)
+                  $('#TimeId').text(timeZoneID)     
                 }
-       });
-
+       })
+       
 }
 
 
@@ -46,12 +48,23 @@ const getWeather = (event) => {
              let temprature = data.main.temp.toFixed(0)
               let lon = data.coord.lon
               let lat = data.coord.lat
+              const winSpeed = data.wind.speed
+              const pressure = data.main.pressure
+              const humidity = data.main.humidity
+              const direction = data.wind.deg
+
             $('#status').text(status)
             $('#temprature').text(temprature)
-            $('#date').text()
+            $('.windspeedstatus').text(winSpeed)
+            $('.windpressurestatus').text(pressure)
+            $('.directionclimatestatus').text(direction)
+            $('.humidityclimatestatus').text(humidity)
             getDate()
             //function to get the lat and long for timezone
             currentDate(lat, lon)
+            $('.timedisplay').effect('shake', "right")
+            $('.weatherresultText').effect('shake', "left")
+            $('.grid-container').effect('bounce', "slow")
             
             
 

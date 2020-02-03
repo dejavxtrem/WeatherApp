@@ -10,8 +10,8 @@ body {
     font-family: 'Martel Sans', sans-serif;
     border: 5px;
     border-style: groove;
-    width: 50%;
-    margin-left: 25%;
+    width: 51%;
+    margin-left: 24%;
     
 
     
@@ -49,6 +49,7 @@ body {
 
 .temp {
     font-size: 3rem;
+    font-family: 'Martel Sans', sans-serif;
 }
 .innerbox {
     width: 52%;
@@ -73,6 +74,7 @@ form {
 
 .statusclass {
     font-size: 1.5rem;
+    font-family: 'Martel Sans', sans-serif;   
 }
 
 .image img {
@@ -134,4 +136,32 @@ button {
 #humidity img {
     width: 50%;
     margin-left: 39px;
+}
+
+.windspeedstatus {
+font-family: 'Martel Sans', sans-serif;
+color:blueviolet;
+font-size: 2.5rem;
+}
+
+.windpressurestatus {
+    font-family: 'Martel Sans', sans-serif;
+    color:rgb(43, 116, 226);
+    font-size: 2.5rem;
+}
+
+.directionclimatestatus {
+    font-family: 'Martel Sans', sans-serif;
+    color:rgb(43, 128, 226);
+    font-size: 2.5rem;
+}
+
+.humidityclimatestatus {
+    font-family: 'Martel Sans', sans-serif;
+    color:rgb(43, 214, 226);
+    font-size: 2.5rem;
+}
+
+.windsstatus, .pressurestatus, .directionstatus, .directionstatu {
+    font-weight: bold;
 }
