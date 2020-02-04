@@ -65,6 +65,7 @@ const getWeather = (event) => {
             $('.timedisplay').effect('shake', "right")
             $('.weatherresultText').effect('shake', "left")
             $('.grid-container').effect('bounce', "slow")
+            $('input').val('')
             
             
 

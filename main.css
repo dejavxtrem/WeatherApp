@@ -146,7 +146,8 @@ button {
     padding-bottom: .5rem;
     padding-left: 1rem;
     padding-right: 1rem;
-    color: white
+    color: white;
+    margin-left: 1%;
 }
 .grid-container {
     display: inline-flex;
