@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
+
+
 body {
     font-family: 'Martel Sans', sans-serif;
+    background: rgb(29, 141, 197);
+    
+    background-size: cover;
     
 
 }
@@ -9,16 +16,19 @@ body {
     justify-content: center;
     font-family: 'Martel Sans', sans-serif;
     border: 5px;
-    border-style: groove;
-    width: 51%;
+    
+    width: 52%;
     margin-left: 24%;
-    
-
-    
+    --borderWidth: 3px;
+  background: #1D1F20;
+  position: relative;
+  border-radius: var(--borderWidth);
+        
 }
 .headerdetails h2 {
     font-size: 24pt;
     margin-right: 20px;
+    color: aliceblue;
 }
 
 .page-container {
@@ -30,19 +40,41 @@ body {
     margin-top: -10px;
 }
 
+.page-container:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+  
+
+
+
 .timedisplay {
     flex-direction: column;
     padding:.5rem;
     margin-top: .5rem;
     margin-bottom: .5rem;
-    border: groove;
+    /*border: groove;*/
     text-align: center;
+    --borderWidth: 3px;
+    background: #1D1F20;
+    position: relative;
+    border-radius: var(--borderWidth);
 
 }
 
 .timedisplay h4 {
     align-items: center;
     font-size: 20pt;
+    color: aliceblue;
 
 }
 
@@ -56,15 +88,23 @@ body {
 }
 
 form {
-    border: groove;
+    /*border: groove;*/
     height: 70px;
     text-align: center;
-    margin-top: -9px;
+    margin-top: -14px;
+    --borderWidth: 3px;
+    background: #1D1F20;
+    position: relative;
+    border-radius: var(--borderWidth);
 }
 
 .weatherresultText {
-    border: groove;
+    /*border: groove;*/
     text-align: center;
+    --borderWidth: 3px;
+    background: #1D1F20;
+    position: relative;
+    border-radius: var(--borderWidth);
 }
 
 .textcenter-form {
@@ -74,7 +114,12 @@ form {
 
 .statusclass {
     font-size: 1.5rem;
-    font-family: 'Martel Sans', sans-serif;   
+    font-family: 'Martel Sans', sans-serif;
+    color: aliceblue;  
+}
+
+.temp, .unit {
+    color: aliceblue;
 }
 
 .image img {
@@ -106,13 +151,18 @@ button {
 .grid-container {
     display: inline-flex;
     width: 100%;
+    
 }
 .grid-item {
     justify-content: space-evenly;
     width:100%;
-    border: groove;
+    /*border: groove;*/
     grid-template-rows: auto;
     height: 200px;
+    --borderWidth: 3px;
+    background: #1D1F20;
+    position: relative;
+    border-radius: var(--borderWidth);
     
 }
 
@@ -162,6 +212,12 @@ font-size: 2.5rem;
     font-size: 2.5rem;
 }
 
-.windsstatus, .pressurestatus, .directionstatus, .directionstatu {
+.windsstatus, .pressurestatus, .directionstatus {
     font-weight: bold;
+    color: aliceblue;
+}
+
+#date, #Timezonename, #TimeId, #Time {
+    color: aliceblue;
+    font-family: 'Raleway';
 }
