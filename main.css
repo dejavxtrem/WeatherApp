@@ -222,3 +222,62 @@ font-size: 2.5rem;
     color: aliceblue;
     font-family: 'Raleway';
 }
+
+
+@media screen and (max-width: 600px) {
+    body {
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab );
+        -webkit-animation: gradientBG 10s ease infinite;
+	        animation: gradientBG 10s ease infinite;
+        /*background-image: url('./image/frozen-wave-against-sunlight-1210273.jpg')8*/        
+    }
+
+    .grid-container {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        
+    }
+
+   input {
+    width: 41%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+   }
+
+   button {
+    border-radius: .25em;
+    background-color: #4299e1;
+    width: 27%;
+    height: 50px;
+    font-weight: 700;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: white;
+    margin-left: 1%;
+   }
+
+
+}
+
+@media screen and (max-width: 375px) {
+    body {
+        background-image: url('./image/beach-blur-clouds-dawn-462030.jpg')
+    }
+
+    button {
+        border-radius: .25em;
+        background-color: #4299e1;
+        width: 41%;
+        height: 32px;
+        font-weight: 700;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        color: white;
+        margin-left: 1%;
+    }
+}

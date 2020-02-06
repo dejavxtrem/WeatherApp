@@ -5,7 +5,17 @@ let getDate = () => {
     $('#date').text(dateString)
 }
 
-//getDate()
+
+  let  momentTime = moment().format('MMMM Do YYYY, h:mm:ss a')
+    $('#time').text(momentTime)
+
+//let momentTime = moment.tz.guess();
+//console.log(momentTime)
+
+
+
+
+
 
 //google api time zone call
 const currentDate = (lat1, lat2) => {
@@ -27,11 +37,32 @@ const currentDate = (lat1, lat2) => {
                   let timeZoneID = response.timeZoneId
                   console.log(timeZoneID, timeZone)
                   $('#Timezonename').text(timeZone)
-                  $('#TimeId').text(timeZoneID)     
+                  $('#TimeId').text(timeZoneID)
+                  //calculating the time zone local time
+                //   let offSets = response.dstOffset * 1000 + response.rawOffset * 1000 // get DST and time zone offsets in  milliseconds
+                //   let localDate = new Date(timestamp * 1000 + offSets) // Date oject containing current time of target location
+                //   let refreshDate = new Date() // get current date again to calculate time elapsed between targetdate and now
+                //   let millisecondselapsed = refreshDate - newdate // get amount of time elapsed
+                //   localDate.setMilliseconds(localDate.getMilliseconds() + millisecondselapsed)
+                //   lsetInterval
+                //   ocalDate.setSeconds(localDate.getSeconds() + 1)
+                //   let TimeZoneDate =
+                    getTimezone(timeZoneID)
+
                 }
        })
        
 }
+
+const getResize = () => {
+    $(window).resize(() => {
+        if ($('.grid-container').css("flex-direction") == "column") {
+            $('.grid-container').toggle("explode")
+        }
+    })
+}
+
+
 
 
 const getWeather = (event) => {
@@ -65,7 +96,9 @@ const getWeather = (event) => {
             $('.timedisplay').effect('shake', "right")
             $('.weatherresultText').effect('shake', "left")
             $('.grid-container').effect('bounce', "slow")
+            //getResize()
             $('input').val('')
+            
             
             
 
@@ -83,6 +116,7 @@ const getWeather = (event) => {
 
 $(() => {
     $('form').on('submit', getWeather)
+    getResize()
    
   
 })
