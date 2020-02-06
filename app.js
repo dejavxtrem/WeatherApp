@@ -2,15 +2,23 @@ let getDate = () => {
     let date = new Date()
     let dateString = date.toLocaleDateString()
     //console.log(dateString)
-    $('#date').text(dateString)
+    //$('#date').text(dateString)
 }
 
 
-  let  momentTime = moment().format('MMMM Do YYYY, h:mm:ss a')
-    $('#time').text(momentTime)
+  
+let momentTime = (timeInsert) => {
+    let momentNow = moment.tz.guess();
+    let momentFormat = moment().format('YYYY-MM-DD h:mm')
+    let momentConvert = moment.tz(`${momentFormat}`, `${momentNow}`)
+    let newTime = momentConvert.format()
+    console.log(newTime)
 
-//let momentTime = moment.tz.guess();
-//console.log(momentTime)
+    let network = moment.utc(`${momentFormat}`).tz(`${timeInsert}`).format('ddd, Do MMMM YYYY, h:mma');
+    //console.log(network)
+}
+
+
 
 
 
@@ -47,7 +55,7 @@ const currentDate = (lat1, lat2) => {
                 //   lsetInterval
                 //   ocalDate.setSeconds(localDate.getSeconds() + 1)
                 //   let TimeZoneDate =
-                    getTimezone(timeZoneID)
+                 momentTime(timeZoneID)
 
                 }
        })
@@ -97,6 +105,8 @@ const getWeather = (event) => {
             $('.weatherresultText').effect('shake', "left")
             $('.grid-container').effect('bounce', "slow")
             //getResize()
+            let  momentTime = moment().format('MMMM Do YYYY, h:mm:ss a')
+            $('#Time').text(momentTime)
             $('input').val('')
             
             
